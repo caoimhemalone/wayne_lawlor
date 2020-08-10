@@ -1,0 +1,61 @@
+/*
+Vars
+*/
+
+$navy: #082140;
+$gold: #B79954;
+$black: #000;
+$white: #FEFEFF;
+
+body {
+	//font-family: 'Bellota', cursive;
+	font-family: 'Ubuntu', sans-serif;
+	// font-family: 'Noto Sans HK', sans-serif;
+	color: $black;
+	background-color: $white;
+	font-display: swap;
+}
+
+.row {
+	margin: 0;
+}
+
+h2 {
+    padding: 40px 0;
+    margin: 0;
+}
+
+hr {
+	width: 100%;
+}
+
+a {
+	color: $navy;
+
+	&:hover {
+		color: $gold;
+        text-shadow: 1px 1px rgba(255, 255, 255, 0.78);
+	}
+}
+
+button {
+	&:hover {
+		cursor: pointer;
+	}
+
+	&:focus {
+		outline: none;
+		box-shadow: none;
+	}
+}
+
+/*
+Fonts 
+*/
+//@import url('https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100;300;400;500;700;900&display=swap');
+
+/*
+Mixins 
+*/
