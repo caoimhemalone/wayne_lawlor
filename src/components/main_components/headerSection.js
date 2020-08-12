@@ -9,7 +9,7 @@ class Header extends Component {
                     <Row>
                         <Col xs={12} md={12} className="header-item d-flex">
                             <span>{this.props.subheading}</span>
-                            <h1 className="d-flex justify-content-center">{this.props.heading}</h1>
+                            <h1 className="d-flex">{this.props.heading}</h1>
                         </Col>
                     </Row>
                 </Grid>

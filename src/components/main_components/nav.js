@@ -24,13 +24,13 @@ class Nav extends React.Component {
         hamburger: '#B79954'
     }
 
-    listenScrollEvent = e => {
-        if (window.scrollY > 300) {
-            this.setState({nav: '#fff', hamburger: '#000', trans: '2s ease-in'})
-        } else {
-            this.setState({nav: 'transparent', hamburger: '#B79954', trans: 'unset'})
-        }
-    }
+    // listenScrollEvent = e => {
+    //     if (window.scrollY > 300) {
+    //         this.setState({nav: '#fff', hamburger: '#000', trans: '2s ease-in'})
+    //     } else {
+    //         this.setState({nav: 'transparent', hamburger: '#B79954', trans: 'unset'})
+    //     }
+    // }
 
     componentDidMount() {
         window.addEventListener('scroll', this.listenScrollEvent)

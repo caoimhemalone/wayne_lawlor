@@ -4,10 +4,10 @@ import React, { Component } from "react";
 
 //components
 import Header from '../components/main_components/headerSection';
-// import Brands from '../components/homeComponents/brandsSection';
-// import Welcome from '../components/homeComponents/welcomeSection';
-// import History from '../components/homeComponents/historySection';
-// import Appointment from '../components/mainComponents/appointmentSection';
+import Me from '../components/homepage_components/meSection';
+import ThreeLinks from '../components/homepage_components/linksSection';
+import IconsHome from '../components/homepage_components/iconSection';
+
 
 
 class Homepage extends Component {
@@ -18,8 +18,10 @@ class Homepage extends Component {
     return (
       <div className="home-page">
         <Header heading={this.header} subheading={this.subheading} isSlider={this.slider}/>
-        {/*<Welcome />
-        <Brands />
+        <Me />
+        <ThreeLinks />
+        <IconsHome />
+        {/*<Brands />
         <Appointment />
         <History /> */}
       </div>
