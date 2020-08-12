@@ -39,11 +39,28 @@ class Contact extends React.Component {
                     <div className="container contact-comp-inner">
                         <Grid fluid className="contact-comp-upper">
                             <Row>
-                            <Col xs={6} md={6} className="contact-left"></Col>
-                            <Col xs={6} md={6} className="contact-right"></Col>
+                            <Col xs={6} md={6} className="contact-left">
+                                <a className="phone" href="/">018888888</a>
+                                <a className="email" href="/">email@example.com</a>
+                            </Col>
+                            <Col xs={6} md={6} className="contact-right">
+                                <ul>
+                                    <li>
+                                        <a className="social-media" href="/">Social Media Icon</a>
+                                    </li>
+                                    <li>
+                                        <a className="social-media" href="/">Social Media Icon</a>
+                                    </li>
+                                    <li>
+                                        <a className="social-media" href="/">Social Media Icon</a>
+                                    </li>
+                                    <li>
+                                        <a className="social-media" href="/">Social Media Icon</a>
+                                    </li>
+                                </ul>
+                            </Col>
                             </Row>
                         </Grid>
-                        <div className="contact-comp-lower"></div>
                     </div>
                 </div>
             );

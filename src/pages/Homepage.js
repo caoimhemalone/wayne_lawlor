@@ -7,7 +7,7 @@ import Header from '../components/main_components/headerSection';
 import Me from '../components/homepage_components/meSection';
 import ThreeLinks from '../components/homepage_components/linksSection';
 import IconsHome from '../components/homepage_components/iconSection';
-
+import Contact from '..//components/main_components/contactSection';
 
 
 class Homepage extends Component {
@@ -21,9 +21,7 @@ class Homepage extends Component {
         <Me />
         <ThreeLinks />
         <IconsHome />
-        {/*<Brands />
-        <Appointment />
-        <History /> */}
+        <Contact />
       </div>
     );  
   }
