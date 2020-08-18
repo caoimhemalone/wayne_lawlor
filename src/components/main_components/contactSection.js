@@ -37,7 +37,7 @@ class Contact extends React.Component {
            return (
                 <div className="contact-container bg-navy">
                     <div className="container contact-comp-inner">
-                        <Grid fluid className="contact-comp-upper">
+                        <Grid fluid>
                             <Row>
                             <Col xs={6} md={6} className="contact-left">
                                 <a className="phone" href="/">018888888</a>

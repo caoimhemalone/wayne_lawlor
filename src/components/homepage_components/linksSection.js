@@ -38,14 +38,16 @@ class ThreeLinks extends React.Component {
                     <div className="container">
                         <ul className="three-links-section">
                             <li className="page-link">
-                                <div className="page-link__text">
-                                    <h3>Clients</h3>
-                                </div>
-                                <div className="page-link_image">
-                                    <div className="page-link_image-inner">
-                                        {/* <img/> */}
+                                <a className="page-link__link">
+                                    <div className="page-link__text">
+                                        <h3>Clients</h3>
                                     </div>
-                                </div>
+                                    <div className="page-link_image">
+                                        <div className="page-link_image-inner">
+                                            {/* <img/> */}
+                                        </div>
+                                    </div>
+                                </a>
                             </li>
                             <li className="page-link">
                                 <div className="page-link__text">

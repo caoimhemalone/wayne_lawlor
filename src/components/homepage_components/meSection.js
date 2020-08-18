@@ -34,7 +34,7 @@ class Me extends React.Component {
         // const {hometable, isLoaded } = this.state;
         // if(isLoaded) {
            return (
-                <div className="welcome-container">
+                <div className="welcome-container bg-navy">
                     <div className="container">
                         <div className="title-container">
                             <div className="title-seperator title-seperator-container-left">

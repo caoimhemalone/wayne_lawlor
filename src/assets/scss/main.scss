@@ -263,12 +263,171 @@ nav {
 ******* Homepage *******
 */
 .home-page {
+    //Header Section
     .header {
+        background-position: right;
+        background-size: 85%;
+        background-repeat: no-repeat;
+
         .header-container {
+            .header-item {
+                padding: 80px 70px 80px 0;
+                position: relative;
+                background-color: $white;
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    background: $gold;
+
+                    @media only screen and (min-width: 769px) and (max-width: 1024px) {
+                        width: 192px;
+                        height: 16px;
+                        top: 50%;
+                        right: -110px;
+                    }
+
+                    @media only screen and (min-width: 1025px) and (max-width: 1920px) {
+                        width: 192px;
+                        height: 16px;
+                        top: 50%;
+                        right: -110px;
+                    }
+                }
+            }
+
             h1 {
                 text-align: left;
                 justify-content: left;
-                margin-right: 50%;
+                margin-right: 10%;
+            }
+        }
+    }
+
+    //Me Section
+    .welcome-container {
+        background: $navy url(../../assets/images/pattern-left.svg) top left -200px/300px repeat-y;
+        color: $white;
+        padding: 60px 0;
+
+        .container {
+            border-left: $gold solid 16px;
+            padding-left: 4%;
+        }
+
+        .welcome-text {
+            padding-bottom: 40px;
+        }
+    }
+
+    //Links Section
+    .three-links-container {
+        padding: 80px 0;
+        ul {
+            width: 92%;
+            margin: 0 auto;
+
+            .page-link {
+                border: none;
+
+                .page-link__link {
+                    padding-top: 30px;
+                    position: relative;
+
+                    &:hover {
+                        .page-link__text {
+                            &:before {
+                                height: calc(100% + 180px);
+                                top: -90px;
+                            }
+                        }
+                    }
+
+                    .page-link__text {
+                        width: 50%;
+                        background-color: $white;
+                        padding-right: 150px;
+                        display: flex;
+
+                        &:before {
+                            transition: height ease .25s, top ease .25s;
+                            content: "";
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            z-index: -1;
+                            background: $white;
+
+                            @media only screen and (max-width: 1920px){
+                                width: calc(100% - 99px);
+                            }
+                        }
+
+                        &:after {
+                            transition: right ease .25s;
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            background: url(../../assets/images/arrow.svg);
+
+                            @media only screen and (min-width: 671px){
+                                width: 40px;
+                                height: 20px;
+                            }
+
+                            @media only screen and (min-width: 769px){
+                                right: 50px;
+                            }
+                        }
+
+                        @media only screen and (min-width: 671px) and (max-width: 1024px) {
+                            min-height: 210px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //USP Section
+    .usps-container {
+        ul {
+            margin-bottom: 0;
+        }
+    }
+
+    //Contact Section
+    .contact-container {
+        padding-bottom: 30px;
+
+        .contact-comp-inner {
+            width: 92%;
+            margin: 0 auto;
+            background-color: $white;
+            padding: 30px 0;
+        }
+
+        .contact-left {
+            a {
+                display: block;
+                font-size: 1.25rem;
+                font-weight: 700;
+
+                &:last-child {
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        .contact-right {
+            ul {
+                list-style: none;
+
+                li {
+                    display: inline-block;
+                }
             }
         }
     }
