@@ -4,6 +4,7 @@ Vars
 
 $navy: #082140;
 $gold: #B79954;
+$light-grey: #f5f6f6;
 $black: #000;
 $white: #FEFEFF;
 
@@ -55,6 +56,14 @@ button {
 		outline: none;
 		box-shadow: none;
 	}
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
 }
 
 /*

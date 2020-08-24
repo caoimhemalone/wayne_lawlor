@@ -35,28 +35,26 @@ class IconsHome extends React.Component {
         // if(isLoaded) {
            return (
                 <div className="usps-container bg-navy">
-                    <div className="container">
-                        <ul className="usps-section">
-                            <li className="usps-list">
-                                <div className="usps-list__icon">
-                                    {/* <img /> */}
-                                </div>
-                                <h6>Event Marketing</h6>
-                            </li>
-                            <li className="usps-list">
-                                <div className="usps-list__icon">
-                                    {/* <img /> */}
-                                </div>
-                                <h6>Social Events</h6>
-                            </li>
-                            <li className="usps-list">
-                                <div className="usps-list__icon">
-                                    {/* <img /> */}
-                                </div>
-                                <h6>Social Media</h6>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul className="usps-section">
+                        <li className="usps-list">
+                            <div className="usps-list__icon">
+                                {/* <img /> */}
+                            </div>
+                            <h6>Event Marketing</h6>
+                        </li>
+                        <li className="usps-list">
+                            <div className="usps-list__icon">
+                                {/* <img /> */}
+                            </div>
+                            <h6>Social Events</h6>
+                        </li>
+                        <li className="usps-list">
+                            <div className="usps-list__icon">
+                                {/* <img /> */}
+                            </div>
+                            <h6>Social Media</h6>
+                        </li>
+                    </ul>
                 </div>
             );
         // } return null;

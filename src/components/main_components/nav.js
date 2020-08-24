@@ -7,7 +7,7 @@ import ReactGA from "react-ga";
 
 //pages
 import Home from '../../pages/Homepage';
-// import About from '../../pages/About';
+import Press from '../../pages/Press';
 // import Brands from '../../pages/Brands';
 // import IndBrand from '../../pages/IndBrand';
 // import B2B from '../../pages/B2B';
@@ -95,8 +95,8 @@ class Nav extends React.Component {
                     </nav>
                     <Switch>
                         <Route exact path="/" component={Home}/>          
-                        {/* <Route path="/about-us" component={About}/>
-                        <Route path="/brands" component={Brands}/>  
+                        <Route path="/press" component={Press}/>
+                        {/* <Route path="/brands" component={Brands}/>  
                         <Route path="/b2b" component={B2B}/>
                         <Route path="/schedule" component={Schedule}/> */}
                         <Route path="/contact" component={Contact}/>

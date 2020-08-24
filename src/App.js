@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 //components
 import Nav from './components/main_components/nav';
-
+import Contact from './components/main_components/contactSection';
 import Footer from './components/main_components/footer';
 
 //includes
@@ -14,7 +14,8 @@ class App extends Component {
     return (
       <div>
         <Nav />
-        <Footer />
+        {/* <Footer /> */}
+        <Contact />
       </div>
     );  
   }

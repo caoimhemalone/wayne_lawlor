@@ -1,6 +1,7 @@
 import React from 'react';
 //import axios from 'axios';
 
+import image_1 from '../../assets/images/Home-Featured.jpg';
 
 class ThreeLinks extends React.Component {
     // state = {
@@ -35,39 +36,43 @@ class ThreeLinks extends React.Component {
         // if(isLoaded) {
            return (
                 <div className="three-links-container">
-                    <div className="container">
+                    <div className="three-links-outer">
                         <ul className="three-links-section">
                             <li className="page-link">
                                 <a className="page-link__link">
                                     <div className="page-link__text">
                                         <h3>Clients</h3>
                                     </div>
-                                    <div className="page-link_image">
-                                        <div className="page-link_image-inner">
-                                            {/* <img/> */}
+                                    <div className="page-link__image">
+                                        <div className="page-link__image-inner">
+                                            <img src={image_1} alt="section image"/>
                                         </div>
                                     </div>
                                 </a>
                             </li>
                             <li className="page-link">
-                                <div className="page-link__text">
-                                    <h3>Press</h3>
-                                </div>
-                                <div className="page-link_image">
-                                    <div className="page-link_image-inner">
-                                        {/* <img/> */}
+                                <a className="page-link__link">
+                                    <div className="page-link__text">
+                                        <h3>Press</h3>
                                     </div>
-                                </div>
+                                    <div className="page-link__image">
+                                        <div className="page-link__image-inner">
+                                            <img src={image_1} alt="section image"/>
+                                        </div>
+                                    </div>
+                                </a>
                             </li>
                             <li className="page-link">
-                                <div className="page-link__text">
-                                    <h3>Contact</h3>
-                                </div>
-                                <div className="page-link_image">
-                                    <div className="page-link_image-inner">
-                                        {/* <img/> */}
+                                <a className="page-link__link">
+                                    <div className="page-link__text">
+                                        <h3>Contact</h3>
                                     </div>
-                                </div>
+                                    <div className="page-link__image">
+                                        <div className="page-link__image-inner">
+                                            <img src={image_1} alt="section image"/>
+                                        </div>
+                                    </div>
+                                </a>
                             </li>
                         </ul>
                     </div>
