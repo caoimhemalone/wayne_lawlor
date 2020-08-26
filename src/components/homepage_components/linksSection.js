@@ -39,7 +39,7 @@ class ThreeLinks extends React.Component {
                     <div className="three-links-outer">
                         <ul className="three-links-section">
                             <li className="page-link">
-                                <a className="page-link__link">
+                                <a className="page-link__link" href="/clients">
                                     <div className="page-link__text">
                                         <h3>Clients</h3>
                                     </div>
@@ -51,7 +51,7 @@ class ThreeLinks extends React.Component {
                                 </a>
                             </li>
                             <li className="page-link">
-                                <a className="page-link__link">
+                                <a className="page-link__link" href="/press">
                                     <div className="page-link__text">
                                         <h3>Press</h3>
                                     </div>
@@ -63,7 +63,7 @@ class ThreeLinks extends React.Component {
                                 </a>
                             </li>
                             <li className="page-link">
-                                <a className="page-link__link">
+                                <a className="page-link__link" href="/contact">
                                     <div className="page-link__text">
                                         <h3>Contact</h3>
                                     </div>

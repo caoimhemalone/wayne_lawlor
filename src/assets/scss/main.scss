@@ -214,6 +214,34 @@ nav {
                     font-size: 24px;
                     color: $white;
                     margin-top: 20px;
+                    padding: 5%;
+
+                    a {
+                        color: $white;
+                        position: relative;
+
+                        &:before {
+                            transition: height ease .25s, top ease .25s;
+                            content: "";
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: -10px;
+                            background: $gold;
+                            opacity: 0;
+                            width: 6px;
+                        }
+
+                        &:hover {
+                            color: $gold;
+                            text-shadow: none;
+                            text-decoration: none;
+
+                            &:before {
+                                opacity: 1;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -230,6 +258,7 @@ nav {
         padding-right: 0;
         height: 40vh;
         display: flex;
+        position: relative;
 
         h1 {
             //position: absolute;
@@ -243,6 +272,31 @@ nav {
                 //font-size: 54px;
                 font-size: 3.375rem;
                 letter-spacing: 8px;
+            }
+        }
+
+        .header-logo {
+            position: fixed;
+            top: 3%;
+            left: 4%;
+            z-index: 1;
+            width: 10%;
+            opacity: 1;
+            display: block;
+
+            &.show {
+                opacity: 1;
+                transition: opacity 0.2s;
+            }
+
+            &.hide {
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.2s;
+            }
+
+            img {
+                width: 100%;
             }
         }
 
@@ -942,11 +996,25 @@ nav {
     }
 
     .contact-container {
-        width: 90%;
-        margin: 0 auto;
+        .contact__info {
+            background-color: $white;
+            padding: 0 20%;
+
+            .contact__details {
+                margin-bottom: 40px;
+                margin-top: 40px;
+                background-color: $gold;
+                padding: 30px 40px;
+
+                h2 {
+                    padding-top: 0;
+                    
+                }
+            }
+        }
 
         .contact__form {
-            width: 70%;
+            width: 40%;
             margin: 0 auto;
 
             .form-control {
@@ -973,6 +1041,49 @@ nav {
         }
     }
 }
+
+/*
+******* Clients Page *******
+*/
+.clients {
+    .header {
+        background-image: url(../images/Home-Featured.jpg);
+        background-repeat: no-repeat;
+        background-position: center 60%;
+        background-size: cover;
+
+        .header-container {
+            height: 60vh;
+        }
+
+        h1 {
+            color: $white;
+        }
+    }
+
+    .clients-container {
+        margin-top: 5%;
+
+        .clients-section {
+            .client-item {
+                background-color: $navy;
+                flex-basis: 48%;
+                max-width: 48%;
+                margin: 1%;
+
+                .client-item__text {
+                    width: 70%;
+                    margin: 5% auto;
+                    padding: 15%;
+                    text-align: center;
+                    background-color: $white;
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
 
 /*
 ******* FOOTER *******

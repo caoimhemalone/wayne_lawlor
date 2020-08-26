@@ -7,6 +7,7 @@ import $ from 'jquery';
 import Header from '../components/main_components/headerSection';
 
 import image_1 from '../assets/images/Home-Featured.jpg';
+import logo from '../assets/images/logos/wl-logo-10.png';
 
 
 class Press extends Component {
@@ -24,7 +25,7 @@ class Press extends Component {
     render() {
         return (
         <div className="press-page">
-        <Header heading={this.header}/>
+        <Header heading={this.header} logoimage={logo}/>
             <Grid fluid className="press-container">
                 <Row className="press">
                     <Col xs={12} md={12} className="press-preview">

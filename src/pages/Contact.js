@@ -3,9 +3,10 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 //import axios from 'axios'
 //import Pulse from 'react-reveal/Pulse';
 
-
 //components
 import Header from '../components/main_components/headerSection';
+
+import logo from '../assets/images/logos/wl-logo-8.png';
 
 class Contact extends Component {
 //   state = {
@@ -40,14 +41,15 @@ class Contact extends Component {
 //   }
 
   header = "Contact Us";
+
   render() {
     //const {contacttable } = this.state;
     return (
       <div className="contact">
-        <Header heading={this.header}/>
-        <Grid fluid className="contact-container">
+        <Header heading={this.header} logoimage={logo}/>
+        <div className="contact-container">
           <Row className="contact__info">
-              <Col xs={12} md={6} className="contact__details">
+              <Col xs={12} md={12} className="contact__details">
                   <h2 className="d-flex">Get in touch</h2>
                   <div className="contact__details-item">
                     <ion-icon name="location-outline"></ion-icon>
@@ -76,8 +78,6 @@ class Contact extends Component {
               </Col>
           </Row>
 
-          <hr/>
-
           <Row className="contact__form">
               <Col xs={12} md={12}>
                 {/* <Pulse> */}
@@ -102,7 +102,7 @@ class Contact extends Component {
                 </form>
               </Col>
           </Row>
-        </Grid>
+        </div>
       </div>
     );
   }
