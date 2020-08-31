@@ -17,32 +17,32 @@ class Clients extends Component {
         <Header heading={this.header} logoimage={logo}/>
         <Grid className="clients-container">
              <Row className="clients-section">
-                 <Col xs={6} md={6} className="client-item">
+                 <Col xs={12} md={6} className="client-item">
                      <div className="client-item__text">
                          Client 1
                      </div>
                  </Col>
-                 <Col xs={6} md={6} className="client-item">
+                 <Col xs={12} md={6} className="client-item">
                      <div className="client-item__text">
                          Client 2
                      </div>
                  </Col>
-                 <Col xs={6} md={6} className="client-item">
+                 <Col xs={12} md={6} className="client-item">
                      <div className="client-item__text">
                          Client 3
                      </div>
                  </Col>
-                 <Col xs={6} md={6} className="client-item">
+                 <Col xs={12} md={6} className="client-item">
                      <div className="client-item__text">
                          Client 4
                      </div>
                  </Col>
-                 <Col xs={6} md={6} className="client-item">
+                 <Col xs={12} md={6} className="client-item">
                      <div className="client-item__text">
                          Client 5
                      </div>
                  </Col>
-                 <Col xs={6} md={6} className="client-item">
+                 <Col xs={12} md={6} className="client-item">
                      <div className="client-item__text">
                          Client 6
                      </div>
