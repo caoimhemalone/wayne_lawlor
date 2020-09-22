@@ -1,7 +1,9 @@
 import React from 'react';
 //import axios from 'axios';
 
-import image_1 from '../../assets/images/Home-Featured.jpg';
+import image_1 from '../../assets/images/stock/stock-3.jpg';
+import image_2 from '../../assets/images/stock/stock-1.jpg';
+import image_3 from '../../assets/images/stock/stock-4.jpg';
 
 class ThreeLinks extends React.Component {
     // state = {
@@ -57,7 +59,7 @@ class ThreeLinks extends React.Component {
                                     </div>
                                     <div className="page-link__image">
                                         <div className="page-link__image-inner">
-                                            <img src={image_1} alt="section image"/>
+                                            <img src={image_2} alt="section image"/>
                                         </div>
                                     </div>
                                 </a>
@@ -69,7 +71,7 @@ class ThreeLinks extends React.Component {
                                     </div>
                                     <div className="page-link__image">
                                         <div className="page-link__image-inner">
-                                            <img src={image_1} alt="section image"/>
+                                            <img src={image_3} alt="section image"/>
                                         </div>
                                     </div>
                                 </a>

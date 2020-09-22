@@ -5,6 +5,8 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 
 //components
 import Header from '../components/main_components/headerSection';
+import client_1 from '../assets/images/clients/Riff-Shop-Logo-2019.png';
+import client_2 from '../assets/images/clients/0.jpeg';
 
 import logo from '../assets/images/logos/wl-logo-10.png';
 
@@ -18,34 +20,40 @@ class Clients extends Component {
         <Grid className="clients-container">
              <Row className="clients-section">
                  <Col xs={12} md={6} className="client-item">
-                     <div className="client-item__text">
-                         Client 1
+                     {/* <div className="client-item__text">
+                         Riff Shop Music
+                     </div> */}
+                     <div className="client-item__image">
+                         <img src={client_1} alt="Riff Shop Music" />
                      </div>
                  </Col>
                  <Col xs={12} md={6} className="client-item">
-                     <div className="client-item__text">
-                         Client 2
+                     {/* <div className="client-item__text">
+                          Atlacarte
+                     </div> */}
+                      <div className="client-item__image">
+                         <img src={client_2} alt="Riff Shop Music" />
                      </div>
                  </Col>
                  <Col xs={12} md={6} className="client-item">
-                     <div className="client-item__text">
-                         Client 3
-                     </div>
+                     {/* <div className="client-item__text">
+                         FAI
+                     </div> */}
                  </Col>
                  <Col xs={12} md={6} className="client-item">
-                     <div className="client-item__text">
-                         Client 4
-                     </div>
+                     {/* <div className="client-item__text">
+                         Krystle
+                     </div> */}
                  </Col>
                  <Col xs={12} md={6} className="client-item">
-                     <div className="client-item__text">
-                         Client 5
-                     </div>
+                     {/* <div className="client-item__text">
+                         Cessalto
+                     </div> */}
                  </Col>
                  <Col xs={12} md={6} className="client-item">
-                     <div className="client-item__text">
-                         Client 6
-                     </div>
+                     {/* <div className="client-item__text">
+                         BNM Therepy
+                     </div> */}
                  </Col>
              </Row>
         </Grid>     

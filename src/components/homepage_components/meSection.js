@@ -47,7 +47,8 @@ class Me extends React.Component {
                         </div>
 
                         <div className="welcome-text">
-                            <p>Wayne Lawlor is a .......</p>
+                            <p>Wayne Lawlor Communications was founded by Wayne himself officially in May 2020. 
+Wayne has worked with numerous Clients over the years on a freelance basis but I decided to make the move as the demand for my services was growing. </p>
                             {/* <p>{hometable.map(welcome => (
                                 <div key={welcome.id} dangerouslySetInnerHTML={{ __html:welcome.acf.welcome}}/>
                             ))}</p> */}

@@ -6,7 +6,12 @@ import $ from 'jquery';
 //components
 import Header from '../components/main_components/headerSection';
 
-import image_1 from '../assets/images/Home-Featured.jpg';
+import image_1 from '../assets/images/press/rsm.jpg';
+import image_2 from '../assets/images/stock/stock-7.jpg';
+import image_3 from '../assets/images/stock/stock-8.jpg';
+import image_4 from '../assets/images/stock/stock-9.jpg';
+
+
 import logo from '../assets/images/logos/wl-logo-10.png';
 
 
@@ -32,12 +37,12 @@ class Press extends Component {
                         <a href="/" className="press-preview__image">
                             <img src={image_1} alt="press preview" />
                             <div className="press-preview__image-text">
-                                <span>Text Text Text</span>
-                                <h2>Blah Blah Blah</h2>
+                                <span>The band had an event at.........</span>
+                                <h2>Riff Shop Music</h2>
                             </div>
                         </a>
                         <div className="press-preview__text">
-                            <p>blah blah blah blah blah</p>
+                            <p>Riff Shop Music played the ..........</p>
                             <button  className="press-preview__btn" onClick={()=>{this.setState({show1:!this.state.show1})}}>View</button>
                         </div>
                     </Col>
@@ -46,7 +51,7 @@ class Press extends Component {
                         this.state.show1? <div className="press-info">
                         <div className="press-info__text">
                             <button onClick={()=>{this.setState({show1:!this.state.show1})}}  >Close</button>
-                            <p>Blah blah blah</p>
+                            <p>Riff Shop Music played the ..........</p>
                         </div>
                     </div>
                     : null
@@ -54,7 +59,7 @@ class Press extends Component {
 
                     <Col xs={12} md={12} className="press-preview">
                         <a href="/" className="press-preview__image">
-                            <img src={image_1} alt="press preview" />
+                            <img src={image_2} alt="press preview" />
                             <div className="press-preview__image-text">
                                 <span>Text Text Text</span>
                                 <h2>Blah Blah Blah</h2>
@@ -77,7 +82,7 @@ class Press extends Component {
 
                     <Col xs={12} md={12} className="press-preview">
                         <a href="/" className="press-preview__image">
-                            <img src={image_1} alt="press preview" />
+                            <img src={image_3} alt="press preview" />
                             <div className="press-preview__image-text">
                                 <span>Text Text Text</span>
                                 <h2>Blah Blah Blah</h2>
@@ -101,7 +106,7 @@ class Press extends Component {
 
                     <Col xs={12} md={12} className="press-preview">
                         <a href="/" className="press-preview__image">
-                            <img src={image_1} alt="press preview" />
+                            <img src={image_4} alt="press preview" />
                             <div className="press-preview__image-text">
                                 <span>Text Text Text</span>
                                 <h2>Blah Blah Blah</h2>
