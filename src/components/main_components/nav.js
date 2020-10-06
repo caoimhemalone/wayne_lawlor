@@ -7,6 +7,7 @@ import ReactGA from "react-ga";
 
 //pages
 import Home from '../../pages/Homepage';
+import About from '../../pages/About';
 import Press from '../../pages/Press';
 import Contact from '../../pages/Contact';
 import Clients from '../../pages/Clients';
@@ -48,6 +49,9 @@ class Nav extends React.Component {
                                         <a href="/">Home</a>
                                     </li>
                                     <li>
+                                        <a href="/about">About</a>
+                                    </li>
+                                    <li>
                                         <a href="/clients">Clients</a>
                                     </li>
                                     <li>
@@ -61,7 +65,8 @@ class Nav extends React.Component {
                         </div>
                     </nav>
                     <Switch>
-                        <Route exact path="/" component={Home}/>          
+                        <Route exact path="/" component={Home}/>  
+                        <Route path="/about" component={About}/>        
                         <Route path="/press" component={Press}/>
                         <Route path="/contact" component={Contact}/>
                         <Route path="/clients" component={Clients}/>
