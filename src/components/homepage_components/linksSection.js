@@ -1,41 +1,42 @@
 import React from 'react';
-//import axios from 'axios';
-
-import image_1 from '../../assets/images/stock/stock-3.jpg';
-import image_2 from '../../assets/images/stock/stock-1.jpg';
-import image_3 from '../../assets/images/stock/stock-4.jpg';
+import axios from 'axios';
 
 class ThreeLinks extends React.Component {
-    // state = {
-    //     ttable: {},
-    //     isLoaded: false
-    //  }
+    state = {
+        ttable: {},
+        isLoaded: false
+     }
   
-    //  componentDidMount(){
-    //     axios.get('http://www.jaisunhouse.com/wp/wp-json/wp/v2/home/')
-    //     .then(res => this.setState({
-    //        hometable: res.data,
-    //        isLoaded: true
-    //     }))
-    //     .catch(err => console.log(err));
-    //  }
+     componentDidMount(){
+        axios.get('http://www.waynelawlor.com/wp/wp-json/wp/v2/home/16')
+        .then(res => this.setState({
+           hometable: res.data,
+           intro_heading: res.data.acf.intro_heading,
+           link_clients_img: res.data.acf.clients_image,
+           link_press_img: res.data.acf.press_image,
+           link_contact_img: res.data.acf.contact_image,
+           isLoaded: true
+        }))
+        .catch(err => console.log(err));
+     }
   
-    //  constructor(props) {    
-    //   super(props)
-    //   this.state = {
-    //     condition: false
-    //   }
-    //   this.handleClick = this.handleClick.bind(this)
-    // }
-    // handleClick() {
-    //   this.setState({
-    //     condition: !this.state.condition
-    //   })
-    // }
+     constructor(props) {    
+      super(props)
+      this.state = {
+        condition: false
+      }
+      this.handleClick = this.handleClick.bind(this)
+    }
+    handleClick() {
+      this.setState({
+        condition: !this.state.condition
+      })
+    }
   
     render() {
-        // const {hometable, isLoaded } = this.state;
-        // if(isLoaded) {
+        const {isLoaded } = this.state;
+
+        if(isLoaded) {
            return (
                 <div className="three-links-container">
                     <div className="three-links-outer">
@@ -47,7 +48,7 @@ class ThreeLinks extends React.Component {
                                     </div>
                                     <div className="page-link__image">
                                         <div className="page-link__image-inner">
-                                            <img src={image_1} alt="section image"/>
+                                            <img src={this.state.link_clients_img} alt="people talking"/>
                                         </div>
                                     </div>
                                 </a>
@@ -59,7 +60,7 @@ class ThreeLinks extends React.Component {
                                     </div>
                                     <div className="page-link__image">
                                         <div className="page-link__image-inner">
-                                            <img src={image_2} alt="section image"/>
+                                            <img src={this.state.link_press_img} alt="newspapers"/>
                                         </div>
                                     </div>
                                 </a>
@@ -71,7 +72,7 @@ class ThreeLinks extends React.Component {
                                     </div>
                                     <div className="page-link__image">
                                         <div className="page-link__image-inner">
-                                            <img src={image_3} alt="section image"/>
+                                            <img src={this.state.link_contact_img} alt="man holding phone"/>
                                         </div>
                                     </div>
                                 </a>
@@ -80,7 +81,7 @@ class ThreeLinks extends React.Component {
                     </div>
                 </div>
             );
-        // } return null;
+        } return null;
     }
 }
 export default ThreeLinks;

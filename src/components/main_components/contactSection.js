@@ -1,62 +1,97 @@
 import React, {Component} from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import axios from 'axios';
 
+import instagram_img from '../../assets/images/icons/instagram.png'
+import facebook_img from '../../assets/images/icons/facebook.png'
+import linkedin_img from '../../assets/images/icons/linkedin.png'
+import twitter_img from '../../assets/images/icons/twitter.png'
 
 
 class Contact extends React.Component {
-    // state = {
-    //     ttable: {},
-    //     isLoaded: false
-    //  }
+    state = {
+        ttable: {},
+        isLoaded: false
+     }
   
-    //  componentDidMount(){
-    //     axios.get('http://www.jaisunhouse.com/wp/wp-json/wp/v2/home/')
-    //     .then(res => this.setState({
-    //        hometable: res.data,
-    //        isLoaded: true
-    //     }))
-    //     .catch(err => console.log(err));
-    //  }
+     componentDidMount(){
+        axios.get('http://www.waynelawlor.com/wp/wp-json/wp/v2/contact/101')
+        .then(res => this.setState({
+           contacttable: res.data,
+           address: res.data.acf.address,
+           phone: res.data.acf.phone,
+           email: res.data.acf.email,
+           email_mailto: "mailto:"+res.data.acf.email+"?subject = Feedback&body = Message",
+           instagram: res.data.acf.instagram,
+           twitter: res.data.acf.twitter,
+           facebook: res.data.acf.facebook,
+           linkedin: res.data.acf.linkedin,
+           isLoaded: true
+        }))
+        .catch(err => console.log(err));
+     }
   
-    //  constructor(props) {    
-    //   super(props)
-    //   this.state = {
-    //     condition: false
-    //   }
-    //   this.handleClick = this.handleClick.bind(this)
-    // }
-    // handleClick() {
-    //   this.setState({
-    //     condition: !this.state.condition
-    //   })
-    // }
+     constructor(props) {    
+      super(props)
+      this.state = {
+        condition: false
+      }
+      this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick() {
+      this.setState({
+        condition: !this.state.condition
+      })
+    }
   
     render() {
-        // const {hometable, isLoaded } = this.state;
-        // if(isLoaded) {
+        const { isLoaded } = this.state;
+
+        if(isLoaded) {
            return (
                 <div className="contact-container bg-navy">
                     <div className="container contact-comp-inner">
                         <Grid fluid>
                             <Row>
                             <Col xs={12} md={6} className="contact-left">
-                                <a className="phone" href="/">018888888</a>
-                                <a className="email" href="/">email@example.com</a>
+                                <a className="phone" href={this.state.phone}>{this.state.phone}</a>
+                                <a className="email" href={this.state.email_mailto}>{this.state.email}</a>
                             </Col>
                             <Col xs={12} md={6} className="contact-right">
                                 <ul>
-                                    <li>
-                                        <a className="social-media" href="/">Social Media Icon</a>
-                                    </li>
-                                    <li>
-                                        <a className="social-media" href="/">Social Media Icon</a>
-                                    </li>
-                                    <li>
-                                        <a className="social-media" href="/">Social Media Icon</a>
-                                    </li>
-                                    <li>
-                                        <a className="social-media" href="/">Social Media Icon</a>
-                                    </li>
+                                    {this.state.instagram ? (
+                                        <li>
+                                            <a className="social-media" href={this.state.instagram} traget="_blank">
+                                                <img src={instagram_img} alt="instagram" />
+                                            </a>
+                                        </li>) : null
+                                    }
+
+                                    {this.state.twitter ? (
+                                        <li>
+                                            <a className="social-media" href={this.state.twitter} traget="_blank">
+                                                <img src={twitter_img} alt="twitter" />
+                                            </a>
+                                        </li>) : null
+                                    }
+
+                                    {this.state.linkedin ? (
+                                        <li>
+                                            <a className="social-media" href={this.state.linkedin} traget="_blank">
+                                                <img src={linkedin_img} alt="linkedin" />
+                                            </a>
+                                        </li>) : null
+                                    }
+
+                                    {this.state.facebook ? (
+                                        <li>
+                                            <a className="social-media" href={this.state.facebook} traget="_blank">
+                                                <img src={facebook_img} alt="facebook" />
+                                            </a>
+                                        </li>) : null
+                                    }
+                                   
                                 </ul>
                             </Col>
                             </Row>
@@ -64,7 +99,7 @@ class Contact extends React.Component {
                     </div>
                 </div>
             );
-        // } return null;
+        } return null;
     }
 }
 export default Contact;

@@ -22,12 +22,63 @@ class Press extends Component {
             show1:false,
             show2:false,
             show3:false,
-            show4:false
+            show4:false,
+            brands: [],
+            isLoaded: false
         }
+    }
+
+    
+      componentDidMount (){
+    
+        const brandUrl = 'http://www.jaisunhouse.com/wp/wp-json/wp/v2/individual_brand';
+    
+        fetch(brandUrl)
+        .then(response => response.json())
+        .then(response => {
+          response.sort((a, b) => a.id - b.id);
+          this.setState({
+            brands: response,
+            isLoaded: true
+          })
+        })
     }
 
     header = "Press";
     render() {
+
+        let pressLoop = presss.map((press, index)=> {
+            let imgUrl = press.acf.tile_image.sizes.medium;
+            // let link = 'presss/'+press.id
+            //let link = press.id
+            let link = press.slug
+            return (
+                <Col xs={12} md={12} className="press-preview" key={index}>
+                    <a href="/" className="press-preview__image">
+                        <img src={image_1} alt="press preview" />
+                        <div className="press-preview__image-text">
+                            <span>The band had an event at.........</span>
+                            <h2>Riff Shop Music</h2>
+                        </div>
+                    </a>
+                    <div className="press-preview__text">
+                        <p>Riff Shop Music played the ..........</p>
+                        <button  className="press-preview__btn" onClick={()=>{this.setState({show1:!this.state.show1})}}>View</button>
+                    </div>
+                </Col>
+
+                {
+                    this.state.show1? <div className="press-info">
+                    <div className="press-info__text">
+                        <button onClick={()=>{this.setState({show1:!this.state.show1})}}  >Close</button>
+                        <p>Riff Shop Music played the ..........</p>
+                    </div>
+                    </div>
+                    : null
+                }
+            )
+        })
+
         return (
         <div className="press-page">
         <Header heading={this.header} logoimage={logo}/>

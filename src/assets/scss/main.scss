@@ -786,11 +786,11 @@ nav {
                 //     }
                 // }
 
-                &:nth-child(4) {
-                    @media screen and (min-width: 769px){
-                        display: none;
-                    }
-                }
+                // &:nth-child(4) {
+                //     @media screen and (min-width: 769px){
+                //         display: none;
+                //     }
+                // }
 
                 .usps-list__icon {
                     width: 60px;
@@ -1143,6 +1143,9 @@ nav {
 
         ul {
             list-style: none;
+            width: fit-content;
+            padding-left: 0;
+            margin-left: auto;
             
             @media only screen and (max-width: 767px){
                 padding-left: 0;
