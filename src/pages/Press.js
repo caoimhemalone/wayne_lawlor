@@ -18,12 +18,12 @@ import logo from '../assets/images/logos/wl-logo-10.png';
 class Press extends Component {
     constructor(){
         super();
-        this.state={
+        this.state = {
             show1:false,
             show2:false,
             show3:false,
             show4:false,
-            brands: [],
+            press: [],
             isLoaded: false
         }
     }
@@ -36,7 +36,7 @@ class Press extends Component {
         fetch(pressUrl)
         .then(response => response.json())
         .then(response => {
-          response.sort((a, b) => a.id - b.id);
+          //response.sort((a, b) => a.id - b.id);
           this.setState({
             press: response,
             isLoaded: true
@@ -46,38 +46,33 @@ class Press extends Component {
 
     header = "Press";
     render() {
-        // console.log(this.state.press);
-        let pressLoop = this.pressInfo.map((press, index)=> {
-            let imgUrl = press.acf.tile_image.sizes.medium;
-            // let link = 'presss/'+press.id
-            //let link = press.id
-            let link = press.slug
+        console.log(this.state.press);
+        const pressLoop = this.state.press.map((press, index)=> {
+            //console.log(press);
             return (
-                <div>
-                    <Col xs={12} md={12} className="press-preview" key={index}>
-                        <a href="/" className="press-preview__image">
-                            <img src={image_1} alt="press preview" />
-                            <div className="press-preview__image-text">
-                                <span>The band had an event at.........</span>
-                                <h2>Riff Shop Music</h2>
-                            </div>
-                        </a>
-                        <div className="press-preview__text">
-                            <p>Riff Shop Music played the ..........</p>
-                            <button  className="press-preview__btn" onClick={()=>{this.setState({show1:!this.state.show1})}}>View</button>
+                <Col xs={12} md={12} className="press-preview" key={index}>
+                    <a href={press.acf.external_link} className="press-preview__image">
+                        <img src={press.acf.image} alt="press preview" />
+                        <div className="press-preview__image-text">
+                            {/* <span>{press.acf.description}</span> */}
+                            <h2>{press.acf.title}</h2>
                         </div>
-                    </Col>
+                    </a>
+                    <div className="press-preview__text">
+                        <p>{press.acf.description}</p>
+                        <button  className="press-preview__btn" onClick={()=>{this.setState({show1:!this.state.show1})}}>View</button>
+                    </div>
 
                     {
                         this.state.show1? <div className="press-info">
                         <div className="press-info__text">
                             <button onClick={()=>{this.setState({show1:!this.state.show1})}}  >Close</button>
-                            <p>Riff Shop Music played the ..........</p>
+                            <p>{press.acf.description}</p>
                         </div>
                         </div>
                         : null
                     }
-                </div>
+                </Col>
             )
         })
 
@@ -86,7 +81,8 @@ class Press extends Component {
         <Header heading={this.header} logoimage={logo}/>
             <Grid fluid className="press-container">
                 <Row className="press">
-                    <Col xs={12} md={12} className="press-preview">
+                    {pressLoop}
+                    {/* <Col xs={12} md={12} className="press-preview">
                         <a href="/" className="press-preview__image">
                             <img src={image_1} alt="press preview" />
                             <div className="press-preview__image-text">
@@ -178,7 +174,7 @@ class Press extends Component {
                         </div>
                     </div>
                     : null
-                    }
+                    } */}
                 </Row>
             </Grid>
     </div>

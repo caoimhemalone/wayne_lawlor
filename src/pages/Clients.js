@@ -73,8 +73,8 @@ class Clients extends Component {
              <Row className="clients-section">
                {/* {clientLoop} */}
                 {this.state.client_name_1 ? (
-                    <Col xs={12} md={6} className="client-item">
-                        <a target="_blank" href={this.state.client_link_1}  alt={this.state.client_name_1}>
+                    <Col xs={12} md={4} className="client-item">
+                        <a target="_blank" rel="noopener noreferrer" href={this.state.client_link_1}  alt={this.state.client_name_1}>
                             <div className="client-item__image">
                                 <img src={this.state.client_image_1} alt={this.state.client_name_1} />
                             </div>
@@ -84,8 +84,8 @@ class Clients extends Component {
                 }
 
                 {this.state.client_name_2 ? (
-                    <Col xs={12} md={6} className="client-item">
-                        <a target="_blank" href={this.state.client_link_2}  alt={this.state.client_name_2}>
+                    <Col xs={12} md={4} className="client-item">
+                        <a target="_blank" rel="noopener noreferrer" href={this.state.client_link_2}  alt={this.state.client_name_2}>
                             <div className="client-item__image">
                                 <img src={this.state.client_image_2} alt={this.state.client_name_2} />
                             </div>
@@ -95,8 +95,8 @@ class Clients extends Component {
                 }
 
                 {this.state.client_name_3 ? (
-                    <Col xs={12} md={6} className="client-item">
-                        <a target="_blank" href={this.state.client_link_3}  alt={this.state.client_name_3}>
+                    <Col xs={12} md={4} className="client-item">
+                        <a target="_blank" rel="noopener noreferrer" href={this.state.client_link_3}  alt={this.state.client_name_3}>
                             <div className="client-item__image">
                                 <img src={this.state.client_image_3} alt={this.state.client_name_3} />
                             </div>
@@ -106,8 +106,8 @@ class Clients extends Component {
                 }
 
                 {this.state.client_name_4 ? (
-                    <Col xs={12} md={6} className="client-item">
-                        <a target="_blank" href={this.state.client_link_4}  alt={this.state.client_name_4}>
+                    <Col xs={12} md={4} className="client-item">
+                        <a target="_blank" rel="noopener noreferrer" href={this.state.client_link_4}  alt={this.state.client_name_4}>
                             <div className="client-item__image">
                                 <img src={this.state.client_image_4} alt={this.state.client_name_4} />
                             </div>
@@ -117,8 +117,8 @@ class Clients extends Component {
                 }
 
                 {this.state.client_name_5 ? (
-                    <Col xs={12} md={6} className="client-item">
-                        <a target="_blank" href={this.state.client_link_5}  alt={this.state.client_name_5}>
+                    <Col xs={12} md={4} className="client-item">
+                        <a target="_blank" rel="noopener noreferrer" href={this.state.client_link_5}  alt={this.state.client_name_5}>
                             <div className="client-item__image">
                                 <img src={this.state.client_image_5} alt={this.state.client_name_5} />
                             </div>
@@ -128,8 +128,8 @@ class Clients extends Component {
                 }
 
                 {this.state.client_name_6 ? (
-                    <Col xs={12} md={6} className="client-item">
-                        <a target="_blank" href={this.state.client_link_6}  alt={this.state.client_name_6}>
+                    <Col xs={12} md={4} className="client-item">
+                        <a target="_blank" rel="noopener noreferrer" href={this.state.client_link_6}  alt={this.state.client_name_6}>
                             <div className="client-item__image">
                                 <img src={this.state.client_image_6} alt={this.state.client_name_6} />
                             </div>
@@ -139,8 +139,8 @@ class Clients extends Component {
                 }
 
                 {this.state.client_name_7 ? (
-                    <Col xs={12} md={6} className="client-item">
-                        <a target="_blank" href={this.state.client_link_7}  alt={this.state.client_name_7}>
+                    <Col xs={12} md={4} className="client-item">
+                        <a target="_blank" rel="noopener noreferrer" href={this.state.client_link_7}  alt={this.state.client_name_7}>
                             <div className="client-item__image">
                                 <img src={this.state.client_image_7} alt={this.state.client_name_7} />
                             </div>
@@ -150,8 +150,8 @@ class Clients extends Component {
                 }
 
                 {this.state.client_name_8 ? (
-                    <Col xs={12} md={6} className="client-item">
-                        <a target="_blank" href={this.state.client_link_8}  alt={this.state.client_name_8}>
+                    <Col xs={12} md={4} className="client-item">
+                        <a target="_blank" rel="noopener noreferrer" href={this.state.client_link_8}  alt={this.state.client_name_8}>
                             <div className="client-item__image">
                             <img src={this.state.client_image_8} alt={this.state.client_name_8} />
                             </div>

@@ -54,7 +54,7 @@ class Contact extends Component {
                   <div className="contact__details-item">
                     <ion-icon name="location-outline"></ion-icon>
                     <span>
-                      <a target="_blank" href="/">
+                      <a target="_blank" href="/" rel="noopener noreferrer">
                         
                       </a>
                     </span>
