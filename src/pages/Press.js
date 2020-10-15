@@ -6,12 +6,6 @@ import $ from 'jquery';
 //components
 import Header from '../components/main_components/headerSection';
 
-import image_1 from '../assets/images/press/rsm.jpg';
-import image_2 from '../assets/images/stock/stock-7.jpg';
-import image_3 from '../assets/images/stock/stock-8.jpg';
-import image_4 from '../assets/images/stock/stock-9.jpg';
-
-
 import logo from '../assets/images/logos/wl-logo-10.png';
 
 
@@ -36,7 +30,7 @@ class Press extends Component {
         fetch(pressUrl)
         .then(response => response.json())
         .then(response => {
-          //response.sort((a, b) => a.id - b.id);
+          response.sort((a, b) => a.id - b.id);
           this.setState({
             press: response,
             isLoaded: true
