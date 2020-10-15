@@ -1,100 +1,115 @@
 import React from 'react';
-import { BrowserRouter as Link} from "react-router-dom";
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import axios from 'axios';
 
-//import heroOne from './heroImages/hero_1.png';
+import instagram_img from '../../assets/images/icons/instagram.png'
+import facebook_img from '../../assets/images/icons/facebook.png'
+import linkedin_img from '../../assets/images/icons/linkedin.png'
+import twitter_img from '../../assets/images/icons/twitter.png'
 
-function Footer() {
-    return (
-        <footer>
-            <Grid fluid>
-                <Row>
-                    <Col xs={12} md={2} className="footer-left">
-                        WL Logo
-                    </Col>
-                    <Col xs={12} md={10} className="footer-right">
-                        <Row>
-                            <Col xs={6} md={4} className="footer-logo">
-                                WL Logo
+
+class Footer extends React.Component {
+    state = {
+        ttable: {},
+        isLoaded: false
+     }
+  
+     componentDidMount(){
+        axios.get('http://www.waynelawlor.com/wp/wp-json/wp/v2/contact/101')
+        .then(res => this.setState({
+           contacttable: res.data,
+           address: res.data.acf.address,
+           phone: res.data.acf.phone,
+           email: res.data.acf.email,
+           email_mailto: "mailto:"+res.data.acf.email+"?subject = Feedback&body = Message",
+           instagram: res.data.acf.instagram,
+           twitter: res.data.acf.twitter,
+           facebook: res.data.acf.facebook,
+           linkedin: res.data.acf.linkedin,
+           isLoaded: true
+        }))
+        .catch(err => console.log(err));
+     }
+  
+     constructor(props) {    
+      super(props)
+      this.state = {
+        condition: false
+      }
+      this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick() {
+      this.setState({
+        condition: !this.state.condition
+      })
+    }
+  
+    render() {
+        const { isLoaded } = this.state;
+
+        if(isLoaded) {
+           return (
+                <div className="contact-container bg-navy">
+                    <div className="container contact-comp-inner">
+                        <Grid fluid>
+                            <Row>
+                            <Col xs={12} md={6} className="contact-left">
+                                <a className="phone" href={this.state.phone}>{this.state.phone}</a>
+                                <a className="email" href={this.state.email_mailto}>{this.state.email}</a>
                             </Col>
-                            <Col xs={6} md={4} >
+                            <Col xs={12} md={6} className="contact-right">
                                 <ul>
-                                    <li>
-                                        <a href="/about-us">
-                                            <Link to="/about-us">About Us</Link>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/brands">
-                                            <Link to="/brands">Brands</Link>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/b2b">
-                                            <Link to="/b2b">B2B</Link>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/schedule">
-                                            <Link to="/schedule">Schedule</Link>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/contact">
-                                            <Link to="/contact">Contact</Link>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/sign-in">
-                                            <Link to="/sign-in">Sign In</Link>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/sitemap">
-                                            <Link to="/sitemap">Sitemap</Link>
-                                        </a>
-                                    </li>
+                                    {this.state.instagram ? (
+                                        <li>
+                                            <a className="social-media" href={this.state.instagram} traget="_blank">
+                                                <img src={instagram_img} alt="instagram" />
+                                            </a>
+                                        </li>) : null
+                                    }
+
+                                    {this.state.twitter ? (
+                                        <li>
+                                            <a className="social-media" href={this.state.twitter} traget="_blank">
+                                                <img src={twitter_img} alt="twitter" />
+                                            </a>
+                                        </li>) : null
+                                    }
+
+                                    {this.state.linkedin ? (
+                                        <li>
+                                            <a className="social-media" href={this.state.linkedin} traget="_blank">
+                                                <img src={linkedin_img} alt="linkedin" />
+                                            </a>
+                                        </li>) : null
+                                    }
+
+                                    {this.state.facebook ? (
+                                        <li>
+                                            <a className="social-media" href={this.state.facebook} traget="_blank">
+                                                <img src={facebook_img} alt="facebook" />
+                                            </a>
+                                        </li>) : null
+                                    }
+                                   
                                 </ul>
                             </Col>
-                            <Col xs={6} md={4} >
-                                <ul>
-                                    <li>
-                                        <a href="/">
-                                            <Link to="/">Social Media</Link>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/">
-                                            <Link to="/">Social Media</Link>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/">
-                                            <Link to="/">Social Media</Link>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </Col>
-                            <Col xs={6} md={4} >
-                                <ul>
-                                    <li>
-                                        <a href="/">
-                                            <Link to="/">Phone</Link>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/">
-                                            <Link to="/">Email</Link>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
-            </Grid>
-        </footer>
-    );
+                            </Row>
+
+                            <Row className="footer">
+                                <Col xs={12} md={6} className="footer-left">
+                                    &copy; Wayne Lawlor Communications {(new Date().getFullYear())}
+                                </Col>
+
+                                <Col xs={12} md={6} className="footer-right">
+                                    All stock images from <a href="https://www.unsplash.com" target="_blank" re="noopener noreferrer">unsplash.com</a>
+                                </Col>
+                            </Row>
+                        </Grid>
+                    </div>
+                </div>
+            );
+        } return null;
+    }
 }
-
 export default Footer;

@@ -39,6 +39,7 @@ class Clients extends Component {
         })
     }
   render() {
+    const {isLoaded } = this.state;
 
     const clientLoop = this.state.clients.map((client, index)=> {
         //console.log(press);
@@ -53,15 +54,21 @@ class Clients extends Component {
         )
     })
 
-    return (
-      <div className="clients">
-        <Header heading={this.header} logoimage={logo}/>
-        <Grid className="clients-container">
-             <Row className="clients-section">
-               {clientLoop}
-             </Row>
-        </Grid>     
-      </div>
+    if(isLoaded) {
+      return (
+        <div className="clients">
+          <Header heading={this.header} logoimage={logo}/>
+          <Grid className="clients-container">
+              <Row className="clients-section">
+                {clientLoop}
+              </Row>
+          </Grid>     
+        </div>
+      );
+    } return (
+      <Col xs={12} md={4} className="client-item" style={{height: 40, width: 40, backgroundColor: '#fff'}}>
+         <div></div>
+      </Col>
     );
   }
 }
