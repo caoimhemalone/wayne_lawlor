@@ -242,6 +242,11 @@ nav {
             text-align: center;
             align-self: center;
 
+            @media only screen and (max-width: 767px) {
+                margin-top: 85%;
+                margin-bottom: 10%;
+            }
+
             @media screen and (max-width: 1920px) and (min-width: 671px){
                 //font-size: 54px;
                 font-size: 3.375rem;
@@ -798,11 +803,11 @@ nav {
 ******* About page *******
 */
 .about-page {
-    .header {
-        @media only screen and (max-width: 767px) {
-            height: 230px;
-        }
-    }
+    // .header {
+    //     @media only screen and (max-width: 767px) {
+    //         height: 230px;
+    //     }
+    // }
 
     .about {
         &-section {
@@ -820,6 +825,12 @@ nav {
 
                 @media only screen and (max-width: 767px) {
                     margin-top: 40px;
+                    text-align: center;
+                }
+
+                @media only screen and (min-width: 768px) and (max-width: 991px) {
+                    margin: 60px 0;
+                    text-align: center;
                 }
             }
 
@@ -831,7 +842,11 @@ nav {
                 margin: 20px 0;
                 border: 8px solid;
                 border-color: darken($white, 7%);
-                border-radius: 0.25rem;;
+                border-radius: 0.25rem;
+
+                @media only screen and (max-width: 767px) {
+                    margin: 40px 0;
+                }
             }
 
             p {
@@ -886,7 +901,7 @@ nav {
                 width: 100%;
 
                 @media only screen and (min-width: 470px) and (max-width: 767px) {
-                    margin: 40px 0 40px 4%;
+                    margin: 60px 0 60px 4%;
                     width: 46%;
                     float: left;
                 }
@@ -977,6 +992,7 @@ nav {
 
                 @media only screen and (max-width: 767px) {
                     flex-wrap: wrap;
+                    margin-bottom: 40px;
                 }
 
                 @media only screen and (max-width: 1024px) {
@@ -1127,6 +1143,10 @@ nav {
                         h2 {
                             color: $white;
 
+                            @media only screen and (max-width: 767px) {
+                                text-align: center;
+                            }
+
                             @media screen and (max-width: 1920px) and (min-width: 671px){
                                 font-size: 36px;
                                 font-size: 2.25rem;
@@ -1206,7 +1226,7 @@ nav {
                 width: 100vw;
                 top: 0;
                 left: 0;
-                z-index: 3;
+                z-index: 5;
                 display: flex;
                 //pointer-events: none;
 
@@ -1217,6 +1237,11 @@ nav {
                     background-color: $white;
                     padding: 60px 30px;
                     position: relative;
+                    z-index: 999;
+
+                    @media only screen and (max-width: 767px) {
+                        width: 80%;
+                    }
 
                     button {
                         display: block;
@@ -1310,6 +1335,10 @@ nav {
             background-color: $white;
             padding: 0 20%;
 
+            @media only screen and (max-width: 767px) {
+                padding: 0 5%;
+            }
+
             .contact__details {
                 margin-bottom: 40px;
                 margin-top: 40px;
@@ -1347,6 +1376,10 @@ nav {
         .contact__form {
             width: 40%;
             margin: 0 auto;
+
+            @media only screen and(max-width: 767px) {
+                width: 90%;
+            }
 
             .form-control {
                 border: solid 4px $gold;

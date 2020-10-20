@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter as Link} from "react-router-dom";
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import $ from 'jquery';
+import Modal from "../components/modal/Modal";
+
 
 //components
 import Header from '../components/main_components/headerSection';
@@ -13,15 +15,28 @@ class Press extends Component {
     constructor(){
         super();
         this.state = {
-            show1:false,
-            show2:false,
-            show3:false,
-            show4:false,
+            // show1:false,
+            // show2:false,
+            // show3:false,
+            // show4:false,
+            colorChanged: false,
+            showInfo: null,
             press: [],
             isLoaded: false
         }
     }
 
+    state = {
+        showModal: 0
+      };
+    
+      getModal = value => {
+        this.setState({ showModal: value });
+      };
+    
+      hideModal = value => {
+        this.setState({ showModal: 0 });
+      };
     
       componentDidMount (){
     
@@ -35,15 +50,15 @@ class Press extends Component {
             press: response,
             isLoaded: true
           })
-        })
+        });
     }
 
     header = "Press";
     render() {
-        console.log(this.state.press);
         const pressLoop = this.state.press.map((press, index)=> {
             //console.log(press);
             return (
+                <div>
                 <Col xs={12} md={12} className="press-preview" key={index}>
                     <a href={press.acf.external_link} className="press-preview__image">
                         <img src={press.acf.image} alt="press preview" />
@@ -52,21 +67,19 @@ class Press extends Component {
                             <h2>{press.acf.title}</h2>
                         </div>
                     </a>
+
                     <div className="press-preview__text">
                         <p>{press.acf.description}</p>
-                        <button  className="press-preview__btn" onClick={()=>{this.setState({show1:!this.state.show1})}}>View</button>
+                        <button className="press-preview__btn" onClick={() => this.getModal(press.id)}>View</button>
                     </div>
-
-                    {
-                        this.state.show1? <div className="press-info">
-                        <div className="press-info__text">
-                            <button onClick={()=>{this.setState({show1:!this.state.show1})}}  >Close</button>
-                            <p>{press.acf.description}</p>
-                        </div>
-                        </div>
-                        : null
-                    }
                 </Col>
+
+                <Modal
+                show={this.state.showModal === press.id}
+                onHide={() => this.hideModal(press.id)}
+                description={press.acf.description}
+                />
+                </div>
             )
         })
 
@@ -79,99 +92,6 @@ class Press extends Component {
                     <Grid fluid className="press-container">
                         <Row className="press">
                             {pressLoop}
-                            {/* <Col xs={12} md={12} className="press-preview">
-                                <a href="/" className="press-preview__image">
-                                    <img src={image_1} alt="press preview" />
-                                    <div className="press-preview__image-text">
-                                        <span>The band had an event at.........</span>
-                                        <h2>Riff Shop Music</h2>
-                                    </div>
-                                </a>
-                                <div className="press-preview__text">
-                                    <p>Riff Shop Music played the ..........</p>
-                                    <button  className="press-preview__btn" onClick={()=>{this.setState({show1:!this.state.show1})}}>View</button>
-                                </div>
-                            </Col>
-
-                            {
-                                this.state.show1? <div className="press-info">
-                                <div className="press-info__text">
-                                    <button onClick={()=>{this.setState({show1:!this.state.show1})}}  >Close</button>
-                                    <p>Riff Shop Music played the ..........</p>
-                                </div>
-                            </div>
-                            : null
-                            }
-
-                            <Col xs={12} md={12} className="press-preview">
-                                <a href="/" className="press-preview__image">
-                                    <img src={image_2} alt="press preview" />
-                                    <div className="press-preview__image-text">
-                                        <span>Text Text Text</span>
-                                        <h2>Blah Blah Blah</h2>
-                                    </div>
-                                </a>
-                                <div className="press-preview__text">
-                                    <p>blah blah blah blah blah</p>
-                                    <button  className="press-preview__btn" onClick={()=>{this.setState({show2:!this.state.show2})}}>View</button>
-                                </div>
-                            </Col>
-                            {
-                                this.state.show2? <div className="press-info">
-                                <div className="press-info__text">
-                                    <button onClick={()=>{this.setState({show2:!this.state.show2})}}  >Close</button>
-                                    <p>Blah blah blah</p>
-                                </div>
-                            </div>
-                            : null
-                            }
-
-                            <Col xs={12} md={12} className="press-preview">
-                                <a href="/" className="press-preview__image">
-                                    <img src={image_3} alt="press preview" />
-                                    <div className="press-preview__image-text">
-                                        <span>Text Text Text</span>
-                                        <h2>Blah Blah Blah</h2>
-                                    </div>
-                                </a>
-                                <div className="press-preview__text">
-                                    <p>blah blah blah blah blah</p>
-                                    <button  className="press-preview__btn" onClick={()=>{this.setState({show3:!this.state.show3})}}>View</button>
-                                </div>
-                            </Col>
-
-                            {
-                                this.state.show3? <div className="press-info">
-                                <div className="press-info__text">
-                                    <button onClick={()=>{this.setState({show3:!this.state.show3})}}  >Close</button>
-                                    <p>Blah blah blah</p>
-                                </div>
-                            </div>
-                            : null
-                            }
-
-                            <Col xs={12} md={12} className="press-preview">
-                                <a href="/" className="press-preview__image">
-                                    <img src={image_4} alt="press preview" />
-                                    <div className="press-preview__image-text">
-                                        <span>Text Text Text</span>
-                                        <h2>Blah Blah Blah</h2>
-                                    </div>
-                                </a>
-                                <div className="press-preview__text">
-                                    <p>blah blah blah blah blah</p>
-                                    <button  className="press-preview__btn" onClick={()=>{this.setState({show4:!this.state.show4})}}>View</button>
-                                </div>
-                            </Col>
-                            {
-                                this.state.show4? <div className="press-info">
-                                <div className="press-info__text">
-                                    <button onClick={()=>{this.setState({show4:!this.state.show4})}}  >Close</button>
-                                    <p>Blah blah blah</p>
-                                </div>
-                            </div>
-                            : null
-                            } */}
                         </Row>
                     </Grid>
             </div>
