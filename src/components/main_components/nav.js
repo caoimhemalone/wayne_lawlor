@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+// import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
+import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import ReactGA from "react-ga";
 
@@ -33,7 +34,7 @@ class Nav extends React.Component {
     render(){
         return (
             <div>
-                <Router>
+                <Router basename="/" hashType="noslash">
                     <nav>
                         <input type="checkbox" className="toggler"/>
                         <div className="hamburger">
@@ -66,13 +67,13 @@ class Nav extends React.Component {
                     </nav>
                     <Switch>
                         <Route exact path="/" component={Home}/>  
-                        <Route path="/about" component={About}/>        
-                        <Route path="/press" component={Press}/>
-                        <Route path="/contact" component={Contact}/>
-                        <Route path="/clients" component={Clients}/>
-                        <Route path="/sitemap" component={Sitemap}/>
-                    </Switch>          
-                </Router>
+                        <Route exact path="/about" component={About}/>        
+                        <Route exact path="/press" component={Press}/>
+                        <Route exact path="/contact" component={Contact}/>
+                        <Route exact path="/clients" component={Clients}/>
+                        <Route exact path="/sitemap" component={Sitemap}/>
+                    </Switch> 
+                </Router>      
             </div>
         );
     }

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Link } from 'react-router-dom';
 
 // import logo from '../../assets/images/logos/wl-logo-10.png'
 
@@ -27,9 +28,9 @@ class Header extends Component {
             <section className="header" >
                 <Grid fluid className="header-container">
                     <div className={logo_classes}>
-                        <a href="/">
+                        <Link to={`/`}>
                             <img src={this.props.logoimage} alt="WL Logo" />
-                        </a>
+                        </Link>
                     </div>
                     <Row>
                         <Col xs={6} md={6} className="header-item d-flex">

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 //import Pulse from 'react-reveal/Pulse';
 
 //components
