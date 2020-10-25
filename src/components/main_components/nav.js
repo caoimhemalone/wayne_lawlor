@@ -1,9 +1,10 @@
 import React from 'react';
 // import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
-import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom'
+// import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import ReactGA from "react-ga";
-
+import { createBrowserHistory } from "history";
+import { Route, Switch, Redirect, BrowserRouter, Link } from "react-router-dom";
 
 
 //pages
@@ -32,9 +33,12 @@ class Nav extends React.Component {
         ReactGA.pageview(window.location.pathname);
     }
     render(){
+        const hist = createBrowserHistory();
         return (
             <div>
-                <Router basename="/" hashType="noslash">
+                {/* <Router basename="/" hashType="slash"> */}
+                {/* <Router history={browserHistory}> */}
+                <BrowserRouter history={hist}>
                     <nav>
                         <input type="checkbox" className="toggler"/>
                         <div className="hamburger">
@@ -66,15 +70,15 @@ class Nav extends React.Component {
                         </div>
                     </nav>
                     <Switch>
-                        <Route exact path="/" component={Home}/>  
-                        <Route exact path="/about" component={About}/>        
-                        <Route exact path="/press" component={Press}/>
-                        <Route exact path="/contact" component={Contact}/>
-                        <Route exact path="/clients" component={Clients}/>
-                        <Route exact path="/sitemap" component={Sitemap}/>
+                        <Route exact path="/" component={Home} />
+                        <Route path="/about" component={About} />
+                        <Route  path="/press" component={Press}/>
+                        <Route  path="/contact" component={Contact}/>
+                        <Route  path="/clients" component={Clients}/>
+                        <Route  path="/sitemap" component={Sitemap}/>
                     </Switch> 
-                </Router>      
-            </div>
+                </BrowserRouter>     
+            </div> 
         );
     }
 }

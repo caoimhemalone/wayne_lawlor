@@ -70,7 +70,7 @@ class Press extends Component {
 
                     <div className="press-preview__text">
                         <p>{press.acf.description}</p>
-                        <button className="press-preview__btn" onClick={() => this.getModal(press.id)}>View</button>
+                        <button className="press-preview__btn" onClick={() => this.getModal(press.id)}>More Details</button>
                     </div>
                 </Col>
 

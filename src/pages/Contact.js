@@ -84,8 +84,8 @@ class Contact extends Component {
                     <h2 className="d-flex justify-content-center">Send us a message</h2>
                   </Pulse>
 
-                    {/* <form id="contact-form" action="contactform.php" method="POST" enctype="multipart/form-data" name="EmailForm"> */}
-                    <form action="mailto:admin@key-vah.com?subject = Feedback&body = Message" enctype="text/plain">
+                    <form id="contact-form" action="contactform.php" method="POST" enctype="multipart/form-data" name="EmailForm">
+                    {/* <form action="mailto:admin@key-vah.com?subject = Feedback&body = Message" enctype="text/plain"> */}
                       <div className="form-group">
                           <label htmlFor="name">Name</label>
                           <input type="text" className="form-control" required/>
