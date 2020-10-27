@@ -88,15 +88,15 @@ class Contact extends Component {
                     {/* <form action="mailto:admin@key-vah.com?subject = Feedback&body = Message" enctype="text/plain"> */}
                       <div className="form-group">
                           <label htmlFor="name">Name</label>
-                          <input type="text" className="form-control" required/>
+                          <input type="text" className="form-control" required name="name"/>
                       </div>
                       <div className="form-group">
                           <label htmlFor="exampleInputEmail1">Email address</label>
-                          <input type="email" className="form-control" aria-describedby="emailHelp" required />
+                          <input type="email" className="form-control" aria-describedby="emailHelp" required name="email"/>
                       </div>
                       <div className="form-group">
                           <label htmlFor="message">Message</label>
-                          <textarea className="form-control" rows="5" required></textarea>
+                          <textarea className="form-control" rows="5" required name="message"></textarea>
                       </div>
                       <button type="submit" className="btn btn-primary">Submit</button>
                   </form>

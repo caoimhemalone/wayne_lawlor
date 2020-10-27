@@ -6,7 +6,7 @@ import icon_2 from '../../assets/images/icons/data-analysis.svg';
 import icon_3 from '../../assets/images/icons/stats.svg';
 import icon_4 from '../../assets/images/icons/plan.svg';
 import icon_5 from '../../assets/images/icons/user.svg';
-// import icon_5 from '../../assets/images/icons/party.svg';
+import icon_6 from '../../assets/images/icons/party.svg';
 
 class IconsHome extends React.Component {
     state = {
@@ -23,6 +23,7 @@ class IconsHome extends React.Component {
            usp_3: res.data.acf.usp_3,
            usp_4: res.data.acf.usp_4,
            usp_5: res.data.acf.usp_5,
+           usp_6: res.data.acf.usp_6,
            isLoaded: true
         }))
         .catch(err => console.log(err));
@@ -79,12 +80,12 @@ class IconsHome extends React.Component {
                             </div>
                             <h6>{this.state.usp_5}</h6>
                         </li>
-                        {/* <li className="usps-list">
+                        <li className="usps-list">
                             <div className="usps-list__icon">
                                 <img src={icon_6} alt="" />
                             </div>
-                            <h6>Strategic Planning</h6>
-                        </li> */}
+                            <h6>{this.state.usp_6}</h6>
+                        </li>
                     </ul>
                 </div>
             );
