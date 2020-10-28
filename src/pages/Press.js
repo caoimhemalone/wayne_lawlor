@@ -40,7 +40,7 @@ class Press extends Component {
     
       componentDidMount (){
     
-        const pressUrl = 'http://www.waynelawlor.com/wp/wp-json/wp/v2/press';
+        const pressUrl = 'http://www.waynelawlor.com/wp/wp-json/wp/v2/press?per_page=100';
     
         fetch(pressUrl)
         .then(response => response.json())

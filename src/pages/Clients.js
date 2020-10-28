@@ -27,12 +27,13 @@ class Clients extends Component {
 
     componentDidMount (){
 
-        const pressUrl = 'http://www.waynelawlor.com/wp/wp-json/wp/v2/clients';
+        const pressUrl = 'http://www.waynelawlor.com/wp/wp-json/wp/v2/clients?per_page=100';
 
         fetch(pressUrl)
         .then(response => response.json())
         .then(response => {
-            response.sort((a, b) => a.id - b.id);
+            //response.sort((a, b) => a.id - b.id);
+            response.sort((a, b) => parseFloat(a.acf['order_no']) - parseFloat(b.acf['order_no']));
             this.setState({
                 clients: response,
                 isLoaded: true
