@@ -935,6 +935,90 @@ nav {
             }
         }
     }
+
+    .testimonies {
+        &-container {
+            @media only screen and (max-width: 767px) {
+                padding: 0;
+            }
+        }
+
+        &-column {
+            @media only screen and (max-width: 767px) {
+                padding: 0;
+            }
+        }
+
+        &-section {
+            h2 {
+                border-bottom: 10px solid $gold;
+                width: 40%;
+                display: block;
+                text-align: center;
+                margin: 60px auto 20px auto;
+                padding: 15px 0;
+
+                @media only screen and (max-width: 767px) {
+                    width: 80%;
+                    margin: 0 auto;
+                }
+            }
+
+            blockquote {
+                margin-top: 15px;
+            }
+
+            img {
+                width: 180px;
+                margin: auto;
+                background-color: $white;
+                border-radius: 50%;
+                padding: 10px;
+
+                @media only screen and (max-width: 991px) {
+                    width: 120px;
+                    padding: 7px;
+                }
+            }
+
+            .slick-slider {            
+                .slick-slide {
+                    width: 100%;
+                    height: 450px;
+                    background-color: $navy;
+                    color: $white;
+                    text-align: center;
+                    padding: 30px 60px;
+                    margin: 20px 0;
+                    display: flex;
+
+                    @media only screen and (max-width: 767px) {
+                        height: 600px;
+                        padding: 30px;
+                    }
+
+                    @media only screen and (min-width: 768px) and (max-width: 991px) {
+                        //height: 500px;
+                    }
+
+                    div {
+                        align-self: center;
+                    }
+                }
+
+                .slick-prev, .slick-next {
+                    // display: none;
+                    // max-width: 0;
+                    // opacity: 0;
+                    // pointer-events: none;
+
+                    &:before, &:after {
+                        color: $gold;
+                    }
+                }
+            }        
+        }
+    }
 }
 
 

@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import axios from 'axios';
 
-
 //components
 import Header from '../components/main_components/headerSection';
+import Testimonies from '../components/aboutpage_components/testimonies';
+import OurServices from '../components/aboutpage_components/ourservices';
+
 
 import logo from '../assets/images/logos/wl-logo-10.png';
 
@@ -15,7 +17,7 @@ class About extends Component {
   }
 
   componentDidMount(){
-      axios.get('http://www.waynelawlor.com/wp/wp-json/wp/v2/about/121')
+    axios.get('http://www.waynelawlor.com/wp/wp-json/wp/v2/about/121')
       .then(res => this.setState({
         about_info: res.data,
         isLoaded: true
@@ -48,7 +50,7 @@ class About extends Component {
           <Grid className="about-container">
               <Row className="about-section">
                   <Col xs={12} md={6} className="about-top-left">
-                    <img src={this.state.about_info.acf.about_us_image_1} className="about-top-left-image-1" alt="Phone taking photo of food"/>
+                    <img src={this.state.about_info.acf.about_us_image_1} className="about-top-left-image-1" alt="Wayne Lawlor"/>
 
                     <h1>Putting the social into customer experience</h1>
                     <h2><i>{this.state.about_info.acf.sub_heading}</i></h2>
@@ -63,13 +65,15 @@ class About extends Component {
 
                       <p className="par_3">{this.state.about_info.acf.paragraph_3}</p>
 
-                      <img src={this.state.about_info.acf.about_us_image_2} className="about-image-2" alt="Girl taking photo"/>
+                      <img src={this.state.about_info.acf.about_us_image_2} className="about-image-2" alt="Drink celebration"/>
                     </div>
 
                     <p className="par_4">{this.state.about_info.acf.paragraph_4}</p>
                   </Col>
               </Row>
-          </Grid>     
+          </Grid>    
+          <Testimonies />
+          <OurServices />
         </div>
       );
     } return null;
