@@ -54,22 +54,24 @@ class Testimonies extends Component {
             <Slider {...settings}>
                 <div>
                 <img src={this.state.about_info.acf.testimony_image_1} alt="Boat on canal" />
-                <blockquote>{this.state.about_info.acf.testimony_text_1}</blockquote>
+                <div dangerouslySetInnerHTML={{ __html: this.state.who_are_we }}></div>
+
+                <blockquote dangerouslySetInnerHTML={{ __html:this.state.about_info.acf.testimony_text_1}}></blockquote>
                 <span>{this.state.about_info.acf.testimony_author_1}</span>
                 </div>
                 <div>
                 <img src={this.state.about_info.acf.testimony_image_2} alt="Food through phone screen" />
-                <blockquote>{this.state.about_info.acf.testimony_text_2}</blockquote>
+                <blockquote dangerouslySetInnerHTML={{ __html:this.state.about_info.acf.testimony_text_2}}></blockquote>
                 <span>{this.state.about_info.acf.testimony_author_2}</span>
                 </div>
                 <div>
                 <img src={this.state.about_info.acf.testimony_image_3} alt="People celebrating" />
-                <blockquote>{this.state.about_info.acf.testimony_text_3}</blockquote>
+                <blockquote dangerouslySetInnerHTML={{ __html:this.state.about_info.acf.testimony_text_3}}></blockquote>
                 <span>{this.state.about_info.acf.testimony_author_3}</span>
                 </div>
                 <div>
                 <img src={this.state.about_info.acf.testimony_image_4} alt="Girl at football stadium" />
-                <blockquote>{this.state.about_info.acf.testimony_text_4}</blockquote>
+                <blockquote dangerouslySetInnerHTML={{ __html:this.state.about_info.acf.testimony_text_4}}></blockquote>
                 <span>{this.state.about_info.acf.testimony_author_4}</span>
                 </div>
             </Slider>

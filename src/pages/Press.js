@@ -56,7 +56,7 @@ class Press extends Component {
     header = "Press";
     render() {
         const pressLoop = this.state.press.map((press, index)=> {
-            //console.log(press);
+            console.log(this.state.press);
             return (
                 <div>
                 <Col xs={12} md={12} className="press-preview" key={index}>
@@ -91,14 +91,13 @@ class Press extends Component {
                 <Header heading={this.header} logoimage={logo}/>
                     <Grid fluid className="press-container">
                         <Row className="press">
-                            {pressLoop}
+                        {this.state.press.length ? {pressLoop} : <div className="no-press">No Press available at this time</div>}
+                            {/* {pressLoop} */}
                         </Row>
                     </Grid>
             </div>
             );  
-        } return (
-            <div style={{height: 100+"vh", width: 100+"vw", backgroundColor: '#fff'}}></div>
-        )
+        } return null
     }
 }
 

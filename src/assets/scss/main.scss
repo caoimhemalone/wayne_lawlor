@@ -1001,6 +1001,10 @@ nav {
                         //height: 500px;
                     }
 
+                    &:hover {
+                        cursor: pointer;
+                    }
+
                     div {
                         align-self: center;
                     }
@@ -1017,6 +1021,71 @@ nav {
                     }
                 }
             }        
+        }
+    }
+
+    .services {
+        h2 {
+            border-bottom: 10px solid $gold;
+            width: 40%;
+            display: block;
+            text-align: center;
+            margin: 60px auto 20px auto;
+            padding: 15px 0;
+
+            @media only screen and (max-width: 767px) {
+                width: 80%;
+                margin: 0 auto;
+            }
+        } 
+
+        &-section {
+            .services-item {
+                padding: 20px;
+
+                &:nth-child(odd) {
+                    .item-wrapper {
+                        background-color: $cream;
+                    }
+    
+                    span {
+                        color: $navy;
+                    }
+
+                    .number {
+                        color: #d8d8b6;
+                    }
+                }
+
+                .item-wrapper {
+                    background-color: $navy;
+                    height: 100px;
+                    width: 100%;
+                    display: flex;
+
+                    @media only screen and (max-width: 767px) {
+                        flex-wrap: wrap;
+                    }
+                }
+
+                .number {
+                    position: absolute;
+                    color: #5b81b0;
+                    font-size: 60px;
+                    font-weight: 700;
+                }
+
+                span {
+                    color: $cream;
+                    font-size: 18px;
+                    display: block;
+                    text-align: center;
+                    font-weight: 700;
+                    align-self: center;
+                    width: 100%;
+                    z-index: 2;
+                }
+            }
         }
     }
 }
@@ -1360,6 +1429,17 @@ nav {
                 }
             }
         }
+
+        .no-press {
+            width: 100%;
+            padding: 40px 10px;
+            text-align: center;font-size: 18px;
+            background-color: $white;
+            display: block;
+            z-index: 3;
+            margin-top: 25vh;
+            margin-bottom: 25vh;
+        }
     }
 }
 
@@ -1537,6 +1617,8 @@ nav {
 
     .clients-container {
         margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
 
         @media only screen and (max-width: 767px){
             margin-bottom: 5%;
@@ -1575,12 +1657,18 @@ nav {
                     margin-bottom: 20px;
 
                     img {
-                        width: 100%;
+                        width: 300px;
+                        height: 300px;
 
-                        @media only screen and (min-width: 768px) {
-                            width: 300px;
-                            height: 300px;
+                        @media only screen and (min-width: 768px) and (max-width: 991px) {
+                            width: 200px;
+                            height: 200px;
                         }
+
+                        // @media only screen and (min-width: 992px) {
+                        //     width: 300px;
+                        //     height: 300px;
+                        // }
                     }
                 }
             }
