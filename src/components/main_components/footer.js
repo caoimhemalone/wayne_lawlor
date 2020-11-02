@@ -102,7 +102,12 @@ class Footer extends React.Component {
                                 </Col>
 
                                 <Col xs={12} md={6} className="footer-right">
-                                    All stock images from <a href="https://www.unsplash.com" target="_blank" re="noopener noreferrer">unsplash.com</a>
+                                    <span>
+                                        All stock images from <a href="https://www.unsplash.com" target="_blank" re="noopener noreferrer">unsplash.com</a>
+                                    </span>
+                                    <span>
+                                        Web Development & Design by <a href="https://www.key-vah.com" target="_blank" re="noopener noreferrer">key-vah web creations</a>
+                                    </span>
                                 </Col>
                             </Row>
                         </Grid>

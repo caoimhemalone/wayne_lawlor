@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import axios from 'axios'
-import { Link } from 'react-router-dom';
-//import Pulse from 'react-reveal/Pulse';
+import { Helmet } from 'react-helmet';
+
 
 //components
 import Header from '../components/main_components/headerSection';
@@ -59,6 +58,11 @@ class Clients extends Component {
     if(isLoaded) {
       return (
         <div className="clients">
+          <Helmet>
+          <title>WL Communications | Clients</title>
+          <meta name="description" content="Some of the clients that Wayne Lawlor Communications has worked with" />
+          <meta name="theme-color" content="#082140" />
+        </Helmet>
           <Header heading={this.header} logoimage={logo}/>
           <Grid className="clients-container">
               <Row className="clients-section">

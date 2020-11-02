@@ -3,6 +3,7 @@ import { BrowserRouter as Link} from "react-router-dom";
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import $ from 'jquery';
 import Modal from "../components/modal/Modal";
+import { Helmet } from 'react-helmet';
 
 
 //components
@@ -15,10 +16,6 @@ class Press extends Component {
     constructor(){
         super();
         this.state = {
-            // show1:false,
-            // show2:false,
-            // show3:false,
-            // show4:false,
             colorChanged: false,
             showInfo: null,
             press: [],
@@ -88,11 +85,16 @@ class Press extends Component {
         if(isLoaded) {
             return (
             <div className="press-page">
+                <Helmet>
+                    <title>WL Communications | Press</title>
+                    <meta name="description" content="Wayne Lawlor Communication's clients in the press" />
+                    <meta name="theme-color" content="#082140" />
+                </Helmet>
                 <Header heading={this.header} logoimage={logo}/>
                     <Grid fluid className="press-container">
                         <Row className="press">
-                        {this.state.press.length ? {pressLoop} : <div className="no-press">No Press available at this time</div>}
-                            {/* {pressLoop} */}
+                        {/* {this.state.press.length ? {pressLoop} : <div className="no-press">No Press available at this time</div>} */}
+                            {pressLoop}
                         </Row>
                     </Grid>
             </div>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import axios from 'axios';
+import { Helmet } from 'react-helmet';
+
 
 //components
 import Header from '../components/main_components/headerSection';
@@ -17,6 +17,11 @@ class About extends Component {
   render() {        
     return (
       <div className="about-page">
+        <Helmet>
+          <title>WL Communications | About Us</title>
+          <meta name="description" content="About Wayne Lawlor Communications Dublin's leading event and PR company" />
+          <meta name="theme-color" content="#082140" />
+        </Helmet>
         <Header heading={this.header} logoimage={logo}/>
         <AboutInfo />
         <Testimonies />

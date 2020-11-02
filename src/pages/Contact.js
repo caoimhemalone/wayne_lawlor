@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Row, Col } from 'react-flexbox-grid';
 import axios from 'axios';
 import Pulse from 'react-reveal/Pulse';
+import { Helmet } from 'react-helmet';
+
 
 //components
 import Header from '../components/main_components/headerSection';
@@ -26,26 +28,58 @@ class Contact extends Component {
   constructor(props) {    
     super(props)
     this.state = {
-      condition: false
+      condition: false,
+      name: '',
+      email: '',
+      message: '',
+      mailSent: false,
+      error: null
     }
     this.handleClick = this.handleClick.bind(this)
   }
+
   handleClick() {
     this.setState({
       condition: !this.state.condition
     })
   }
 
+  handleSubmit(e){
+    e.preventDefault();
+    axios({
+      method: "POST", 
+      url:"/contactform.php", 
+      data:  this.state
+    }).then((response)=>{
+      if (response.data.status === 'success') {
+        alert("Message Sent."); 
+        this.resetForm()
+      } else if (response.data.status === 'fail') {
+        alert("Message failed to send.")
+      }
+    })
+  }
+
+  resetForm(){
+    this.setState({name: '', email: '', message: ''})
+  }
+
   header = "Contact Us";
 
   render() {
     const {isLoaded } = this.state;
+
         
     if(isLoaded) {
       const emailMailTo = "mailto:"+this.state.contact_info.acf.email+"?subject = Feedback&body = Message";
 
       return (
         <div className="contact">
+          <Helmet>
+            <title>WL Communications | Contact Us</title>
+            <meta name="description" content="Conatct Wayne Lawlor Communications for more information" />
+            <meta name="theme-color" content="#082140" />
+          </Helmet>
           <Header heading={this.header} logoimage={logo}/>
           <div className="contact-container">
             <Row className="contact__info">
@@ -84,21 +118,20 @@ class Contact extends Component {
                     <h2 className="d-flex justify-content-center">Send us a message</h2>
                   </Pulse>
 
-                    <form id="contact-form" action="contactform.php" method="POST" enctype="multipart/form-data" name="EmailForm">
-                    {/* <form action="mailto:admin@key-vah.com?subject = Feedback&body = Message" enctype="text/plain"> */}
-                      <div className="form-group">
-                          <label htmlFor="name">Name</label>
-                          <input type="text" className="form-control" required name="name"/>
-                      </div>
-                      <div className="form-group">
-                          <label htmlFor="exampleInputEmail1">Email address</label>
-                          <input type="email" className="form-control" aria-describedby="emailHelp" required name="email"/>
-                      </div>
-                      <div className="form-group">
-                          <label htmlFor="message">Message</label>
-                          <textarea className="form-control" rows="5" required name="message"></textarea>
-                      </div>
-                      <button type="submit" className="btn btn-primary">Submit</button>
+                  <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
+                    <div className="form-group">
+                        <label htmlFor="name">Name</label>
+                        <input type="text" className="form-control" id="name" value={this.state.name} onChange={this.onNameChange.bind(this)} />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Email address</label>
+                        <input type="email" className="form-control" id="email" aria-describedby="emailHelp" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="message">Message</label>
+                        <textarea className="form-control" rows="5" id="message" value={this.state.message} onChange={this.onMessageChange.bind(this)} />
+                    </div>
+                    <button type="submit" className="btn btn-primary">Submit</button>
                   </form>
                 </Col>
             </Row>
@@ -107,6 +140,19 @@ class Contact extends Component {
       );
     } return null;
   }
+
+  onNameChange(event) {
+	  this.setState({name: event.target.value})
+  }
+
+  onEmailChange(event) {
+	  this.setState({email: event.target.value})
+  }
+
+  onMessageChange(event) {
+	  this.setState({message: event.target.value})
+  }
+
 }
 
 export default Contact;
