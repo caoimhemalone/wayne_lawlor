@@ -98,7 +98,8 @@ class Footer extends React.Component {
 
                             <Row className="footer">
                                 <Col xs={12} md={6} className="footer-left">
-                                    &copy; Wayne Lawlor Communications {(new Date().getFullYear())}
+                                    <span>&copy; Wayne Lawlor Communications {(new Date().getFullYear())}</span>
+                                    <span>Registered Business No. 665867</span>
                                 </Col>
 
                                 <Col xs={12} md={6} className="footer-right">

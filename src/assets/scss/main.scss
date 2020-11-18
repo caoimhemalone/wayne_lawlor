@@ -1556,6 +1556,10 @@ nav {
                     a {
                         margin-left: 10px;
                         color: $white;
+
+                        &:hover {
+                            text-shadow: none;
+                        }
                     }
                 }
             }
@@ -1571,6 +1575,8 @@ nav {
 
             .form-control {
                 border: solid 4px $gold;
+                margin-top: 5px;
+                margin-bottom: 5px;
 
                 &:focus {
                     box-shadow: unset;
@@ -1580,7 +1586,7 @@ nav {
             .btn {
                 background-color: $gold;
                 width: 40%;
-                margin: 0 auto;
+                margin: 20px auto 0 auto;
                 display: block;
                 border-color: $gold;
 
@@ -1684,6 +1690,13 @@ nav {
     border-top: 5px solid $gold;
     padding-top: 15px;
     margin-top: 15px;
+
+    .footer-left {
+        span {
+            display: block;
+            width: 100%;
+        }
+    }
 
     .footer-right {
         color: darken($white, 9%);
