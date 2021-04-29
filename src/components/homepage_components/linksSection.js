@@ -13,7 +13,7 @@ class ThreeLinks extends React.Component {
            hometable: res.data,
            intro_heading: res.data.acf.intro_heading,
            link_clients_img: res.data.acf.clients_image,
-           link_press_img: res.data.acf.press_image,
+        //    link_press_img: res.data.acf.press_image,
            link_contact_img: res.data.acf.contact_image,
            isLoaded: true
         }))
@@ -53,7 +53,7 @@ class ThreeLinks extends React.Component {
                                     </div>
                                 </a>
                             </li>
-                            <li className="page-link">
+                            {/* <li className="page-link">
                                 <a className="page-link__link" href="/press">
                                     <div className="page-link__text">
                                         <h3>Press</h3>
@@ -64,7 +64,7 @@ class ThreeLinks extends React.Component {
                                         </div>
                                     </div>
                                 </a>
-                            </li>
+                            </li> */}
                             <li className="page-link">
                                 <a className="page-link__link" href="/contact">
                                     <div className="page-link__text">

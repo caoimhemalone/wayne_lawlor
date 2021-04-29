@@ -10,7 +10,7 @@ import { Route, Switch, Redirect, BrowserRouter, Link } from "react-router-dom";
 //pages
 import Home from '../../pages/Homepage';
 import About from '../../pages/About';
-import Press from '../../pages/Press';
+// import Press from '../../pages/Press';
 import Contact from '../../pages/Contact';
 import Clients from '../../pages/Clients';
 import Sitemap from '../../pages/Sitemap';
@@ -59,9 +59,9 @@ class Nav extends React.Component {
                                     <li>
                                         <a href="/clients">Clients</a>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <a href="/press">Press</a>
-                                    </li>
+                                    </li> */}
                                     <li>
                                         <a href="/contact">Contact</a>
                                     </li>
@@ -72,7 +72,7 @@ class Nav extends React.Component {
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route path="/about" component={About} />
-                        <Route  path="/press" component={Press}/>
+                        {/* <Route  path="/press" component={Press}/> */}
                         <Route  path="/contact" component={Contact}/>
                         <Route  path="/clients" component={Clients}/>
                         <Route  path="/sitemap" component={Sitemap}/>
