@@ -9,7 +9,7 @@ import Header from '../components/main_components/headerSection';
 import logo from '../assets/images/logos/wl-logo-10.png';
 
 class Clients extends Component {
-  header = "Clients";
+  header = "Brands I've worked with";
 
     constructor(){
         super();

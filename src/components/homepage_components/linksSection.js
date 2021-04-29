@@ -44,7 +44,7 @@ class ThreeLinks extends React.Component {
                             <li className="page-link">
                                 <a className="page-link__link" href="/clients">
                                     <div className="page-link__text">
-                                        <h3>Clients</h3>
+                                        <h3>Clients I've Worked With</h3>
                                     </div>
                                     <div className="page-link__image">
                                         <div className="page-link__image-inner">
